@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core"
+import { Component, OnInit } from "@angular/core"
 
 @Component({
 	selector: "app-navbar",
@@ -6,14 +6,13 @@ import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core"
 	styleUrls: ["./navbar.component.scss"]
 })
 export class NavbarComponent implements OnInit {
-	@Input() navbarIsOpen: boolean
-	@Output() closeNavbarEvt = new EventEmitter()
+	navbarIsOpen: boolean
 
 	constructor() {}
 
 	ngOnInit() {}
 
-	closeNavbar() {
-		this.closeNavbarEvt.emit(!this.navbarIsOpen)
+	toggleNavbar() {
+		this.navbarIsOpen = !this.navbarIsOpen
 	}
 }

@@ -1,15 +1,19 @@
-<div class="navbar__overlay" (click)="closeNavbar()"></div>
+<div class="navbar__overlay" (click)="toggleNavbar()"></div>
 
 <nav class="navbar">
 	<ul class="navbar__menu">
 		<li class="navbar__menu-item navbar__menu-item--close">
-			<button class="navbar__close" (click)="closeNavbar()">
+			<button class="navbar__close" (click)="toggleNavbar()">
 				<span class="screen-reader">Close</span>
 			</button>
 		</li>
 
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="empresa" routerLinkActive="navbar__link--active" (click)="closeNavbar()"
+			<a
+				class="navbar__link"
+				routerLink="empresa"
+				routerLinkActive="navbar__link--active"
+				(click)="toggleNavbar()"
 				>Empresa</a
 			>
 		</li>
@@ -18,7 +22,7 @@
 				class="navbar__link"
 				routerLink="servicos"
 				routerLinkActive="navbar__link--active"
-				(click)="closeNavbar()"
+				(click)="toggleNavbar()"
 				>Serviços</a
 			>
 		</li>
@@ -27,7 +31,7 @@
 				class="navbar__link"
 				routerLink="orcamentos"
 				routerLinkActive="navbar__link--active"
-				(click)="closeNavbar()"
+				(click)="toggleNavbar()"
 				>Orçamentos</a
 			>
 		</li>
@@ -36,7 +40,7 @@
 				class="navbar__link"
 				routerLink="noticias"
 				routerLinkActive="navbar__link--active"
-				(click)="closeNavbar()"
+				(click)="toggleNavbar()"
 				>Notícias</a
 			>
 		</li>
@@ -45,7 +49,7 @@
 				class="navbar__link"
 				routerLink="contactos"
 				routerLinkActive="navbar__link--active"
-				(click)="closeNavbar()"
+				(click)="toggleNavbar()"
 				>Contactos</a
 			>
 		</li>

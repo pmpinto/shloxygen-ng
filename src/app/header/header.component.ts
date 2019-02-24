@@ -1,4 +1,5 @@
-import { Component, EventEmitter, OnInit } from "@angular/core"
+import { Component, OnInit, ViewChild } from "@angular/core"
+import { NavbarComponent } from "../navbar/navbar.component"
 
 @Component({
 	selector: "app-header",
@@ -6,13 +7,13 @@ import { Component, EventEmitter, OnInit } from "@angular/core"
 	styleUrls: ["./header.component.scss"]
 })
 export class HeaderComponent implements OnInit {
-	navbarIsOpen: EventEmitter<boolean>
+	@ViewChild(NavbarComponent) navbarComponent: NavbarComponent
 
 	constructor() {}
 
 	ngOnInit() {}
 
-	toggleNavbar(isOpen: EventEmitter<boolean>) {
-		this.navbarIsOpen = isOpen
+	openNavbar() {
+		this.navbarComponent.toggleNavbar()
 	}
 }

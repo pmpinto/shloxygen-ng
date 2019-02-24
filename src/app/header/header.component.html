@@ -4,13 +4,9 @@
 		<p class="header__slogan">Nosso compromisso, soluções • Desde 1997</p>
 	</a>
 
-	<button class="header__open-navbar" (click)="toggleNavbar(true)">
+	<button class="header__open-navbar" (click)="openNavbar()">
 		<span class="screen-reader">Open</span>
 	</button>
 
-	<app-navbar
-		[navbarIsOpen]="navbarIsOpen"
-		(closeNavbarEvt)="toggleNavbar($event)"
-		[ngClass]="{ 'is-open': navbarIsOpen }"
-	></app-navbar>
+	<app-navbar [ngClass]="{ 'is-open': navbarComponent.navbarIsOpen }"></app-navbar>
 </header>
