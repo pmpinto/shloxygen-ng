@@ -11,8 +11,8 @@ $px-breakpoint: 16;
 // #############################################################################
 $small: 320;
 $medium: 768;
-$large: 1024;
-$xlarge: 1440;
+$large: 980;
+$xlarge: 1200;
 
 $breakpoint-small: #{$small / $px-breakpoint}em;
 $breakpoint-medium: #{$medium / $px-breakpoint}em;
@@ -87,7 +87,11 @@ $font-size-text-small: rem(12);
 $font-size-text: rem(16);
 $font-size-text-bigger: rem(18.8);
 
-$font-size-h1: rem(36);
+$font-size-h1-sm: rem(25.8);
+$font-size-h1-md: rem(49.4);
+$font-size-h1-lg: $font-size-h1-md;
+$font-size-h1: $font-size-h1-lg;
+
 $font-size-h2: rem(24);
 $font-size-h3: rem(18);
 $font-size-h4: rem(16);
