@@ -8,11 +8,18 @@
 .header {
 	display: flex;
 	justify-content: space-between;
+
+	@media ($lg) {
+		align-items: center;
+	}
 }
 
 .header__logo {
-	margin: rem(24) 0;
 	height: rem(12);
+
+	@media ($md) {
+		height: rem(15);
+	}
 }
 
 .header__open-navbar {
@@ -22,8 +29,30 @@
 	padding: rem(16);
 	cursor: pointer;
 	align-self: center;
+
+	@media ($lg) {
+		display: none;
+	}
+}
+
+.header__home-link {
+	text-decoration: none;
+	margin: rem(24) 0;
+
+	@media ($lg) {
+		margin-bottom: rem(12);
+	}
 }
 
 .header__slogan {
 	display: none;
+	font-size: $font-size-text-tiny;
+	color: $color-brand;
+	opacity: 0.5;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+
+	@media ($md) {
+		display: block;
+	}
 }

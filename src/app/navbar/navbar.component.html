@@ -3,27 +3,51 @@
 <nav class="navbar">
 	<ul class="navbar__menu">
 		<li class="navbar__menu-item navbar__menu-item--close">
-			<div class="container">
-				<button class="navbar__close" (click)="closeNavbar()">
-					<span class="screen-reader">Close</span>
-				</button>
-			</div>
+			<button class="navbar__close" (click)="closeNavbar()">
+				<span class="screen-reader">Close</span>
+			</button>
 		</li>
 
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="empresa" (click)="closeNavbar()">Empresa</a>
+			<a class="navbar__link" routerLink="empresa" routerLinkActive="navbar__link--active" (click)="closeNavbar()"
+				>Empresa</a
+			>
 		</li>
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="servicos" (click)="closeNavbar()">Serviços</a>
+			<a
+				class="navbar__link"
+				routerLink="servicos"
+				routerLinkActive="navbar__link--active"
+				(click)="closeNavbar()"
+				>Serviços</a
+			>
 		</li>
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="orcamentos" (click)="closeNavbar()">Orçamentos</a>
+			<a
+				class="navbar__link"
+				routerLink="orcamentos"
+				routerLinkActive="navbar__link--active"
+				(click)="closeNavbar()"
+				>Orçamentos</a
+			>
 		</li>
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="noticias" (click)="closeNavbar()">Notícias</a>
+			<a
+				class="navbar__link"
+				routerLink="noticias"
+				routerLinkActive="navbar__link--active"
+				(click)="closeNavbar()"
+				>Notícias</a
+			>
 		</li>
 		<li class="navbar__menu-item">
-			<a class="navbar__link" routerLink="contactos" (click)="closeNavbar()">Contactos</a>
+			<a
+				class="navbar__link"
+				routerLink="contactos"
+				routerLinkActive="navbar__link--active"
+				(click)="closeNavbar()"
+				>Contactos</a
+			>
 		</li>
 	</ul>
 </nav>

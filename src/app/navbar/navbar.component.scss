@@ -1,8 +1,9 @@
 @import "../utils/scss/variables.scss";
 @import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/spacer.scss";
 
 .navbar {
-	width: 80vw;
+	width: calc(100vw - 60px);
 	height: 100vh;
 	background-color: $color-background;
 	position: absolute;
@@ -11,6 +12,19 @@
 	transition: transform $transition-timing-default;
 	transform: translateX(100vw);
 	box-shadow: $box-shadow-z3;
+
+	@media ($md) {
+		width: 50vw;
+	}
+
+	@media ($lg) {
+		position: static;
+		width: auto;
+		height: auto;
+		box-shadow: none;
+		transform: none;
+		transition: none;
+	}
 }
 
 .navbar__overlay {
@@ -21,32 +35,74 @@
 	background-color: fade-out($color: $color-light-blue, $amount: 0.25);
 	transition: opacity $transition-timing-slow;
 	opacity: 0;
+
+	@media ($lg) {
+		display: none;
+	}
 }
 
 .navbar__menu {
 	padding: 0;
+
+	@media ($lg) {
+		display: flex;
+	}
 }
 
 .navbar__menu-item {
-	padding: rem(18) 0;
 	text-align: center;
 	list-style: none;
 	border-bottom: 1px solid fade-out($color: $color-light-blue, $amount: 0.75);
+
+	@media ($lg) {
+		font-size: $font-size-text-bigger;
+		border: none;
+		margin-left: spacer(3);
+	}
 }
 
 .navbar__menu-item--close {
+	padding: rem(18) 0;
 	text-align: right;
+
+	@media ($md) {
+		padding: rem(26) 0;
+	}
+
+	@media ($lg) {
+		display: none;
+	}
 }
 
 .navbar__close {
 	background-image: url("/assets/icons/icon-close.svg");
 	background-repeat: no-repeat;
 	background-position: center;
-	padding: rem(16);
+	padding: spacer(2);
+	margin-right: rem(15);
+
+	@media ($lg) {
+		display: none;
+	}
 }
 
 .navbar__link {
 	text-decoration: none;
+	padding: rem(18) 0;
+	display: block;
+
+	@media ($lg) {
+		padding: spacer(0.5) 0;
+	}
+}
+
+.navbar__link--active {
+	font-weight: $font-weight-bold;
+
+	@media ($lg) {
+		font-weight: $font-weight-normal;
+		border-bottom: 2px solid $color-brand;
+	}
 }
 
 :host {
@@ -60,7 +116,6 @@
 
 	&.is-open {
 		pointer-events: all;
-		opacity: 1;
 
 		.navbar {
 			transform: translateX(0);
@@ -69,5 +124,12 @@
 		.navbar__overlay {
 			opacity: 1;
 		}
+	}
+
+	@media ($lg) {
+		position: static;
+		width: auto;
+		height: auto;
+		pointer-events: all;
 	}
 }
