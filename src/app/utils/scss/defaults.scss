@@ -1,4 +1,5 @@
 @import "variables.scss";
+@import "spacer.scss";
 
 /**
  * Defaults
@@ -35,7 +36,7 @@ html {
 	// 1
 	font-size: 100%;
 	// 2
-	background: $color-white;
+	background: $color-background;
 	// 3
 	min-height: 100vh;
 	// 4
