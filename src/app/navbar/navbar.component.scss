@@ -1,0 +1,73 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.navbar {
+	width: 80vw;
+	height: 100vh;
+	background-color: $color-background;
+	position: absolute;
+	right: 0;
+	z-index: 2;
+	transition: transform $transition-timing-default;
+	transform: translateX(100vw);
+	box-shadow: $box-shadow-z3;
+}
+
+.navbar__overlay {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	z-index: 1;
+	background-color: fade-out($color: $color-light-blue, $amount: 0.25);
+	transition: opacity $transition-timing-slow;
+	opacity: 0;
+}
+
+.navbar__menu {
+	padding: 0;
+}
+
+.navbar__menu-item {
+	padding: rem(18) 0;
+	text-align: center;
+	list-style: none;
+	border-bottom: 1px solid fade-out($color: $color-light-blue, $amount: 0.75);
+}
+
+.navbar__menu-item--close {
+	text-align: right;
+}
+
+.navbar__close {
+	background-image: url("/assets/icons/icon-close.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: rem(16);
+}
+
+.navbar__link {
+	text-decoration: none;
+}
+
+:host {
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	right: 0;
+	pointer-events: none;
+	overflow: hidden;
+
+	&.is-open {
+		pointer-events: all;
+		opacity: 1;
+
+		.navbar {
+			transform: translateX(0);
+		}
+
+		.navbar__overlay {
+			opacity: 1;
+		}
+	}
+}

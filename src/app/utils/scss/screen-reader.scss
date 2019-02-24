@@ -1,0 +1,8 @@
+// From CSS-Tricks
+
+.screen-reader {
+	position: absolute !important;
+	clip: rect(1px, 1px, 1px, 1px);
+	top: -100vh;
+	left: -100vw;
+}

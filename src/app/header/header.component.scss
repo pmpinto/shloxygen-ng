@@ -1,6 +1,29 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+:host {
+	overflow: hidden;
+}
+
 .header {
+	display: flex;
+	justify-content: space-between;
 }
 
 .header__logo {
-	background: red;
+	margin: rem(24) 0;
+	height: rem(12);
+}
+
+.header__open-navbar {
+	background-image: url("/assets/icons/icon-hamburger.svg");
+	background-repeat: no-repeat;
+	background-position: center;
+	padding: rem(16);
+	cursor: pointer;
+	align-self: center;
+}
+
+.header__slogan {
+	display: none;
 }

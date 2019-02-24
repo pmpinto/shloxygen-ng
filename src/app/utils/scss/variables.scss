@@ -1,5 +1,7 @@
 // Inspired by: https://github.com/janogarcia/bentocss
 
+@import "px-to-rem.scss";
+
 // Global units
 // #############################################################################
 $px: 16;
@@ -60,7 +62,7 @@ $color-green: #8d9c87;
 $color-brand: $color-dark-blue;
 $color-heading: $color-brand;
 $color-text: $color-brand;
-// $color-light-background: $color-light-yellow;
+$color-background: $color-light-yellow;
 // $color-dark-background: $color-light-yellow;
 $color-link: $color-brand;
 $color-link-hover: lighten($color-link, 10%);
@@ -116,3 +118,4 @@ $box-shadow-z3: 0 2px 4px rgba(0, 0, 0, 0.05), 0 4px 16px rgba(0, 0, 0, 0.08);
 $ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
 
 $transition-timing-default: 250ms $ease-out-expo;
+$transition-timing-slow: 1000ms $ease-out-expo;

@@ -1,9 +1,29 @@
+<div class="navbar__overlay" (click)="closeNavbar()"></div>
+
 <nav class="navbar">
-	<ul>
-		<li><a routerLink="empresa">Empresa</a></li>
-		<li><a routerLink="servicos">Serviços</a></li>
-		<li><a routerLink="orcamentos">Orçamentos</a></li>
-		<li><a routerLink="noticias">Notícias</a></li>
-		<li><a routerLink="contactos">Contactos</a></li>
+	<ul class="navbar__menu">
+		<li class="navbar__menu-item navbar__menu-item--close">
+			<div class="container">
+				<button class="navbar__close" (click)="closeNavbar()">
+					<span class="screen-reader">Close</span>
+				</button>
+			</div>
+		</li>
+
+		<li class="navbar__menu-item">
+			<a class="navbar__link" routerLink="empresa" (click)="closeNavbar()">Empresa</a>
+		</li>
+		<li class="navbar__menu-item">
+			<a class="navbar__link" routerLink="servicos" (click)="closeNavbar()">Serviços</a>
+		</li>
+		<li class="navbar__menu-item">
+			<a class="navbar__link" routerLink="orcamentos" (click)="closeNavbar()">Orçamentos</a>
+		</li>
+		<li class="navbar__menu-item">
+			<a class="navbar__link" routerLink="noticias" (click)="closeNavbar()">Notícias</a>
+		</li>
+		<li class="navbar__menu-item">
+			<a class="navbar__link" routerLink="contactos" (click)="closeNavbar()">Contactos</a>
+		</li>
 	</ul>
 </nav>

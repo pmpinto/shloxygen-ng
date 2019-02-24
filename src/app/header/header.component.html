@@ -1,8 +1,16 @@
 <header class="header container-full">
 	<a routerLink="/">
 		<img src="assets/logo.svg" alt="SHL Oxygen" class="header__logo" />
-		<p class="header__tagline">Nosso compromisso, soluções • Desde 1997</p>
+		<p class="header__slogan">Nosso compromisso, soluções • Desde 1997</p>
 	</a>
 
-	<app-navbar></app-navbar>
+	<button class="header__open-navbar" (click)="toggleNavbar(true)">
+		<span class="screen-reader">Open</span>
+	</button>
+
+	<app-navbar
+		[navbarIsOpen]="navbarIsOpen"
+		(closeNavbarEvt)="toggleNavbar($event)"
+		[ngClass]="{ 'is-open': navbarIsOpen }"
+	></app-navbar>
 </header>
