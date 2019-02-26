@@ -46,11 +46,11 @@
 }
 
 .page-home__heading {
-	font-size: $font-size-h1-sm;
+	font-size: $font-size-h1-md;
 	margin-bottom: rem(16);
 
 	@media ($md) {
-		font-size: $font-size-h1-md;
+		font-size: $font-size-h1-lg;
 		margin-bottom: rem(24);
 	}
 

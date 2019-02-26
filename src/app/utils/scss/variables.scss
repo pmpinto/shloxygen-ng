@@ -63,15 +63,13 @@ $color-brand: $color-dark-blue;
 $color-heading: $color-brand;
 $color-text: $color-brand;
 $color-background: $color-light-yellow;
-// $color-dark-background: $color-light-yellow;
 $color-link: $color-brand;
 $color-link-hover: lighten($color-link, 10%);
-// $color-border: $color-medium-grey;
 $color-selection-background: darken($color-camel, 30%);
 $color-selection-text: $color-text;
 $color-highlight: lighten($color-camel, 15%);
 $color-highlight-text: lighten($color-text, 15%);
-$color-border: $color-light-blue;
+$color-border: fade-out($color: $color-light-blue, $amount: 0.75);
 
 // Type
 // #############################################################################
@@ -84,18 +82,34 @@ $font-weight-bold: 600;
 
 $font-size-text-tiny: rem(10);
 $font-size-text-small: rem(12);
+$font-size-text-medium: rem(14);
 $font-size-text: rem(16);
 $font-size-text-bigger: rem(18.8);
+$font-size-text-huge: rem(25.8);
 
-$font-size-h1-sm: rem(25.8);
-$font-size-h1-md: rem(49.4);
-$font-size-h1-lg: $font-size-h1-md;
+$font-size-text-sm: $font-size-text-small;
+$font-size-text-md: $font-size-text;
+$font-size-text-lg: $font-size-text-bigger;
+
+$font-size-h1-sm: rem(18.8);
+$font-size-h1-md: rem(25.8);
+$font-size-h1-lg: rem(49.4);
 $font-size-h1: $font-size-h1-lg;
 
 $font-size-h2: rem(24);
-$font-size-h3: rem(18);
+
+$font-size-h3-sm: rem(16);
+$font-size-h3-md: rem(18.8);
+$font-size-h3-lg: rem(25.8);
+$font-size-h3: $font-size-h3-lg;
+
 $font-size-h4: rem(16);
-$font-size-h5: rem(14);
+
+$font-size-h5-sm: rem(10);
+$font-size-h5-md: $font-size-h5-sm;
+$font-size-h5-lg: rem(16);
+$font-size-h5: $font-size-h5-lg;
+
 $font-size-h6: rem(12);
 
 $font-line-height-text: 1.5;

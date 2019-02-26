@@ -1,0 +1,83 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.cta {
+	padding: rem(40) 0;
+	border-top: 1px solid $color-border;
+	text-align: center;
+
+	@media ($md) {
+		padding: rem(60) 0;
+	}
+
+	@media ($lg) {
+		padding: rem(90) 0;
+	}
+}
+
+.cta__title {
+	font-size: $font-size-h3-sm;
+	font-weight: $font-weight-bold;
+	line-height: rem(21);
+	margin-bottom: rem(6);
+
+	@media ($md) {
+		font-size: $font-size-h3-md;
+		line-height: rem(23);
+		margin-bottom: rem(8);
+	}
+
+	@media ($lg) {
+		font-size: $font-size-h3-lg;
+		line-height: rem(31);
+		margin-bottom: rem(10);
+	}
+}
+
+.cta__text {
+	font-size: $font-size-text-medium;
+	line-height: rem(18);
+	font-weight: $font-weight-normal;
+	margin-bottom: rem(24);
+
+	@media ($md) {
+		font-size: $font-size-text;
+		line-height: rem(19);
+		margin-bottom: rem(40);
+	}
+
+	@media ($md) {
+		font-size: $font-size-text-bigger;
+		line-height: rem(23);
+	}
+}
+
+.cta__button {
+	font-size: $font-size-text-medium;
+	line-height: rem(18);
+	font-weight: $font-weight-bold;
+	padding: rem(12) rem(22);
+	display: block;
+	background-color: $color-background;
+	border: 3px solid $color-brand;
+	box-shadow: $box-shadow-z1;
+	border-radius: 6px;
+	text-decoration: none;
+
+	@media ($md) {
+		font-size: $font-size-text;
+		line-height: rem(19);
+		margin: 0 auto;
+		max-width: rem(240);
+	}
+
+	@media ($lg) {
+		padding: rem(20) rem(40);
+	}
+
+	&:hover,
+	&:active {
+		background-color: $color-brand;
+		color: $color-light-yellow;
+	}
+}

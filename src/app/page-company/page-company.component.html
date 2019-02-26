@@ -1,3 +1,48 @@
-<p>
-  page-company works!
-</p>
+<main class="page-company">
+	<header class="page-company__header">
+		<div class="container-full container-xl">
+			<h1 class="page-company__title">Flexibilidade. Confiança. Rigor. Segurança. Diferenciação. Experiência.</h1>
+			<h2 class="page-company__subtitle">Valores que espelham a nossa conduta</h2>
+		</div>
+		<img
+			class="page-company__image"
+			src="/assets/page-company/company-banner@2x.jpg"
+			alt="Cidade vista do topo de um prédio"
+			srcset="
+				/assets/page-company/company-banner@1x.jpg  720w,
+				/assets/page-company/company-banner@2x.jpg 1440w,
+				/assets/page-company/company-banner@3x.jpg 2880w
+			"
+			sizes="100vw"
+		/>
+	</header>
+	<main class="page-company__content">
+		<div class="container-full">
+			<p class="page-company__text">
+				Somos uma empresa de prestação de serviços de higiene e limpeza profissional, que têm como objectivo
+				apresentar soluções ás necessidades, exigências e expectativas dos parceiros estando sediada no distrito
+				do Porto.
+			</p>
+			<p class="page-company__text">
+				Na concretização dos interesses comuns e do sucesso da nossa organização, almejamos desenvolver
+				excelentes parcerias com os nossos clientes através da customização e da cocriação dos trabalhos e dos
+				resultados das experiências, na realização e valorização pessoal e profissional dos nossos profissionais
+				e com todos os stakeholders.
+			</p>
+			<p class="page-company__text">
+				Neste sentido, desenvolvemos a nossa actividade com o máximo rigor, conformidade legal e com qualidade,
+				procurando sempre consolidar o prestígio alcançado e melhorar consecutivamente os benefícios das nossas
+				soluções.
+			</p>
+			<p class="page-company__text">
+				Dispomos de metodologias de trabalho próprias desenvolvidas ao longo dos 21 anos de existência.
+			</p>
+		</div>
+	</main>
+	<app-cta
+		[title]="'Já conhece os nossos serviços?'"
+		[text]="'Adaptados às suas necessidades'"
+		[buttonLabel]="'Conheça-os agora'"
+		[buttonRoute]="'/servicos'"
+	></app-cta>
+</main>

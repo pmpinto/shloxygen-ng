@@ -1,0 +1,108 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+.page-company {
+}
+
+.page-company__header {
+	position: relative;
+	text-align: center;
+	padding: rem(64) 0;
+	overflow: hidden;
+
+	@media ($md) {
+		padding: rem(140) 0;
+	}
+}
+
+.page-company__title {
+	font-size: $font-size-h1-sm;
+	font-weight: $font-weight-bold;
+	line-height: rem(28.2);
+	padding: 0 5vw;
+
+	@media ($md) {
+		font-size: $font-size-h1-md;
+		line-height: rem(30);
+		padding: 0 13vw;
+	}
+
+	@media ($lg) {
+		font-size: $font-size-h1-lg;
+		line-height: rem(55);
+		padding: 0 10vw;
+	}
+}
+
+.page-company__subtitle {
+	font-size: $font-size-h5-sm;
+	font-weight: $font-weight-normal;
+	line-height: rem(13);
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: fade-out($color: $color-heading, $amount: 0.25);
+
+	@media ($md) {
+		font-size: $font-size-h5-md;
+	}
+
+	@media ($lg) {
+		font-size: $font-size-h5-lg;
+		line-height: rem(20);
+		letter-spacing: 3.2px;
+	}
+}
+
+.page-company__image {
+	position: absolute;
+	z-index: -1;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	opacity: 0.6;
+
+	@media ($md) {
+		opacity: 1;
+	}
+}
+
+.page-company__content {
+	padding: rem(20) 0;
+
+	@media ($md) {
+		padding: rem(80) 14vw;
+	}
+
+	@media ($lg) {
+		padding: rem(90) 18vw;
+	}
+
+	@media ($xlg) {
+		padding: rem(90) rem(180);
+		max-width: rem($xlarge);
+		margin: 0 auto;
+	}
+}
+
+.page-company__text {
+	font-size: $font-size-text-sm;
+	line-height: rem(21);
+	color: $color-text;
+	margin-bottom: 1.3em;
+
+	@media ($md) {
+		font-size: $font-size-text-md;
+		line-height: rem(24);
+	}
+
+	@media ($lg) {
+		font-size: $font-size-text-lg;
+		line-height: rem(28.2);
+	}
+
+	@media ($xlg) {
+		font-size: $font-size-text-huge;
+		font-weight: $font-weight-light;
+		line-height: rem(38.7);
+	}
+}
