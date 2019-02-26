@@ -24,7 +24,9 @@
 	}
 
 	@media ($xlg) {
-		min-height: 100vh;
+		min-height: auto;
+		height: 100vh;
+		max-height: rem(1000);
 	}
 }
 
