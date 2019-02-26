@@ -7,7 +7,11 @@ import { FooterComponent } from "./footer/footer.component"
 import { HeaderComponent } from "./header/header.component"
 import { NavbarComponent } from "./navbar/navbar.component"
 import { PageContactsComponent } from "./page-contacts/page-contacts.component"
-import { PageHomeComponent } from "./page-home/page-home.component"
+import { PageHomeComponent } from "./page-home/page-home.component";
+import { PageCompanyComponent } from './page-company/page-company.component';
+import { PageServicesComponent } from './page-services/page-services.component';
+import { PageBudgetsComponent } from './page-budgets/page-budgets.component';
+import { PageNewsComponent } from './page-news/page-news.component'
 
 @NgModule({
 	declarations: [
@@ -16,7 +20,11 @@ import { PageHomeComponent } from "./page-home/page-home.component"
 		PageHomeComponent,
 		PageContactsComponent,
 		HeaderComponent,
-		FooterComponent
+		FooterComponent,
+		PageCompanyComponent,
+		PageServicesComponent,
+		PageBudgetsComponent,
+		PageNewsComponent
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],
