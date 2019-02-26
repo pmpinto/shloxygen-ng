@@ -6,7 +6,7 @@
 	width: calc(100vw - 60px);
 	height: 100vh;
 	background-color: $color-background;
-	position: absolute;
+	position: fixed;
 	right: 0;
 	z-index: 2;
 	transition: transform $transition-timing-default;
@@ -30,7 +30,7 @@
 .navbar__overlay {
 	width: 100vw;
 	height: 100vh;
-	position: absolute;
+	position: fixed;
 	z-index: 1;
 	background-color: fade-out($color: $color-light-blue, $amount: 0.25);
 	transition: opacity $transition-timing-slow;
