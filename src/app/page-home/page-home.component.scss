@@ -14,8 +14,11 @@
 	}
 
 	@media ($lg) {
+		min-height: 107vh;
+
 		.container-full {
 			height: 100%;
+			position: relative;
 		}
 
 		.row {
@@ -23,6 +26,20 @@
 			align-items: center;
 			height: 100%;
 		}
+	}
+
+	@media ($xlg) {
+		min-height: 100vh;
+	}
+}
+
+.page-home__text-wrapper {
+	@media ($lg) {
+		margin-top: -15vh;
+	}
+
+	@media ($xlg) {
+		margin-top: 0;
 	}
 }
 
