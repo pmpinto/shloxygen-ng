@@ -16,11 +16,6 @@
 	@media ($lg) {
 		min-height: 107vh;
 
-		.container-full {
-			height: 100%;
-			position: relative;
-		}
-
 		.row {
 			justify-content: flex-end;
 			align-items: center;
@@ -30,6 +25,13 @@
 
 	@media ($xlg) {
 		min-height: 100vh;
+	}
+}
+
+.page-home__wrapper {
+	@media ($lg) {
+		height: 100%;
+		position: relative;
 	}
 }
 
