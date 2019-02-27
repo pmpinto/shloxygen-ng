@@ -93,6 +93,7 @@
 
 	@media ($lg) {
 		padding: spacer(0.5) 0;
+		border-bottom: 2px solid transparent;
 	}
 }
 
@@ -101,7 +102,7 @@
 
 	@media ($lg) {
 		font-weight: $font-weight-normal;
-		border-bottom: 2px solid $color-brand;
+		border-color: $color-brand;
 	}
 }
 
