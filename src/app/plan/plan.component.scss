@@ -1,0 +1,148 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.plan {
+	padding-bottom: rem(50);
+
+	@media ($md) {
+		padding-bottom: rem(100);
+	}
+
+	@media ($lg) {
+		display: flex;
+		align-items: stretch;
+		padding-bottom: 0;
+	}
+}
+
+.plan__image {
+	width: 100vw;
+	height: calc(100vw / 1.618);
+	object-fit: cover;
+	object-position: center;
+
+	@media ($lg) {
+		width: 50vw;
+		height: auto;
+	}
+}
+
+.plan__header {
+	margin: rem(50) 10vw;
+	margin-bottom: rem(25);
+	padding-bottom: rem(25);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: baseline;
+	border-bottom: 1px solid $color-border;
+
+	@media ($md) {
+		margin: rem(100) 15vw;
+		margin-bottom: rem(25);
+		padding-bottom: rem(25);
+	}
+
+	@media ($lg) {
+		margin: rem(66) 6vw;
+		margin-bottom: rem(33);
+		padding-bottom: rem(33);
+	}
+}
+
+.plan__name {
+	@include heading-hero();
+
+	margin-bottom: 0;
+
+	@media ($md) {
+		font-size: $font-size-h1-lg;
+		line-height: rem(55);
+	}
+}
+
+.plan__type {
+	font-size: $font-size-text-medium;
+	font-weight: $font-weight-normal;
+	margin-left: 0.3em;
+	margin-bottom: 0;
+
+	@media ($md) {
+		font-size: $font-size-text;
+	}
+
+	@media ($lg) {
+		font-size: $font-size-text-bigger;
+	}
+}
+
+.plan__description {
+	@include body-tiny();
+
+	width: 100%;
+}
+
+.plan__includes {
+	padding-left: 1rem;
+	margin: 0 10vw;
+
+	@media ($md) {
+		margin: 0 15vw;
+		margin-bottom: rem(80);
+	}
+
+	@media ($lg) {
+		margin: 0 6vw;
+		margin-bottom: rem(80);
+	}
+}
+
+.plan__list-item {
+	@include body-text();
+
+	color: fade-out($color: $color-text, $amount: 0.25);
+	list-style-type: disc;
+	margin-bottom: 1em;
+
+	@media ($xlg) {
+		font-size: $font-size-text-lg;
+		font-weight: $font-weight-normal;
+		line-height: rem(28.2);
+	}
+}
+
+.plan__cta {
+	@include button-base();
+
+	margin-top: rem(40);
+	border: 0;
+	border-radius: 3px;
+	color: $color-text;
+}
+
+.plan__details {
+	@media ($lg) {
+		width: 50vw;
+		padding-bottom: rem(100);
+	}
+}
+
+.plan--corporate {
+	background-color: fade-out($color: $color-plan-corporate, $amount: 0.88);
+
+	.plan__cta {
+		background-color: $color-plan-corporate;
+	}
+}
+
+.plan--private {
+	background-color: fade-out($color: $color-plan-private, $amount: 0.88);
+
+	@media ($lg) {
+		flex-direction: row-reverse;
+	}
+
+	.plan__cta {
+		background-color: $color-plan-private;
+	}
+}

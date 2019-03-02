@@ -60,16 +60,24 @@ $color-green: #8d9c87;
 // Color aliases
 // Use these ones instead, they add purpose and meaning, so they're easier to remember
 $color-brand: $color-dark-blue;
+$color-background: $color-light-yellow;
+
 $color-heading: $color-brand;
 $color-text: $color-brand;
-$color-background: $color-light-yellow;
+
 $color-link: $color-brand;
 $color-link-hover: lighten($color-link, 10%);
+
 $color-selection-background: darken($color-camel, 30%);
 $color-selection-text: $color-text;
+
 $color-highlight: lighten($color-camel, 15%);
 $color-highlight-text: lighten($color-text, 15%);
+
 $color-border: fade-out($color: $color-light-blue, $amount: 0.75);
+
+$color-plan-corporate: $color-light-blue;
+$color-plan-private: $color-camel;
 
 // Type
 // #############################################################################
@@ -78,7 +86,7 @@ $font-family-monospace: "Source Code Pro", "Consolas", monospace;
 
 $font-weight-light: 300;
 $font-weight-normal: 400;
-$font-weight-bold: 600;
+$font-weight-bold: 700;
 
 $font-size-text-tiny: rem(10);
 $font-size-text-small: rem(12);

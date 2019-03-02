@@ -1,0 +1,22 @@
+<div [ngClass]="['plan', plan.className]">
+	<img
+		class="plan__image"
+		src="{{ plan.imageSrc }}"
+		alt="{{ plan.imageAlt }}"
+		srcset="{{ plan.imageSrcset }}"
+		sizes="(min-width: 1024px) 1050px, 100vw"
+	/>
+	<div class="plan__details">
+		<header class="plan__header">
+			<h2 class="plan__name">{{ plan.name }}</h2>
+			<p class="plan__type">{{ plan.type }}</p>
+			<p class="plan__description">{{ plan.description }}</p>
+		</header>
+		<ul class="plan__includes" *ngIf="plan.list.length > 0">
+			<li class="plan__list-item" *ngFor="let listItem of plan.list">{{ listItem }}</li>
+		</ul>
+		<div class="container-full">
+			<a class="plan__cta" [routerLink]="plan.ctaRoute">Pedir orçamento</a>
+		</div>
+	</div>
+</div>

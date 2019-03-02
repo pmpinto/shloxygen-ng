@@ -12,6 +12,7 @@ const routes : Routes = [
 	{ path: "", component: PageHomeComponent },
 	{ path: "empresa", component: PageCompanyComponent },
 	{ path: "servicos", component: PageServicesComponent },
+	{ path: "orcamentos/:product", component: PageBudgetsComponent },
 	{ path: "orcamentos", component: PageBudgetsComponent },
 	{ path: "noticias", component: PageNewsComponent },
 	{ path: "contactos", component: PageContactsComponent }

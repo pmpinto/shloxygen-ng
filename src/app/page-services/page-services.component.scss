@@ -1,0 +1,65 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.page-services {
+}
+
+.page-services__header {
+	padding: rem(80) rem(30);
+	text-align: center;
+
+	@media ($lg) {
+		padding: rem(130) rem(30);
+	}
+}
+
+.page-services__title {
+	@include heading-hero();
+}
+
+.page-services__subtitle {
+	@include body-lead();
+}
+
+.page-services__plans-wrapper {
+}
+
+.page-services__footer {
+	margin: rem(40) 0;
+
+	@media ($md) {
+		margin: rem(70) 15vw;
+	}
+}
+
+.page-services__quote {
+	border: 0;
+	padding-left: 0;
+	font-style: normal;
+	text-align: center;
+}
+
+.page-services__quote-text {
+	@include body-lead();
+
+	margin-bottom: 0.5em;
+
+	@media ($md) {
+		font-size: $font-size-text-huge;
+		font-weight: $font-weight-light;
+		line-height: rem(38.7);
+	}
+}
+
+.page-services__quote-author {
+	@include body-text();
+
+	font-weight: $font-weight-bold;
+	font-style: normal;
+
+	@media ($md) {
+		font-size: $font-size-text-bigger;
+		font-weight: $font-weight-bold;
+	}
+}

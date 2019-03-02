@@ -1,3 +1,23 @@
-<p>
-  page-services works!
-</p>
+<div class="page-services">
+	<header class="page-services__header">
+		<div class="container-full container-xl">
+			<h1 class="page-services__title">Nosso compromisso, soluções</h1>
+			<p class="page-services__subtitle">
+				Disponibilizámos às empresas um conjunto de soluções flexíveis e adaptadas às necessidades específicas
+				de cada parceiro em serviços de manutenção integral e preventiva.
+			</p>
+		</div>
+	</header>
+	<main class="page-services__plans-wrapper">
+		<!-- Plans -->
+		<ng-container *ngIf="plans.length > 0">
+			<app-plan [plan]="plan" *ngFor="let plan of plans"></app-plan>
+		</ng-container>
+	</main>
+	<footer class="page-services__footer container-full">
+		<blockquote class="page-services__quote">
+			<p class="page-services__quote-text">Tudo deveria se tornar o mais simples possível, mas não simplicado.</p>
+			<cite class="page-services__quote-author">Albert Einstein</cite>
+		</blockquote>
+	</footer>
+</div>

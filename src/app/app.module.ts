@@ -12,7 +12,8 @@ import { PageCompanyComponent } from './page-company/page-company.component';
 import { PageServicesComponent } from './page-services/page-services.component';
 import { PageBudgetsComponent } from './page-budgets/page-budgets.component';
 import { PageNewsComponent } from './page-news/page-news.component';
-import { CtaComponent } from './cta/cta.component'
+import { CtaComponent } from './cta/cta.component';
+import { PlanComponent } from './plan/plan.component'
 
 @NgModule({
 	declarations: [
@@ -26,7 +27,8 @@ import { CtaComponent } from './cta/cta.component'
 		PageServicesComponent,
 		PageBudgetsComponent,
 		PageNewsComponent,
-		CtaComponent
+		CtaComponent,
+		PlanComponent
 	],
 	imports: [BrowserModule, AppRoutingModule],
 	providers: [],

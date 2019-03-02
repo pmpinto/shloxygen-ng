@@ -1,5 +1,6 @@
 @import "../utils/scss/variables.scss";
 @import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
 
 .page-company {
 }
@@ -16,20 +17,15 @@
 }
 
 .page-company__title {
-	font-size: $font-size-h1-sm;
-	font-weight: $font-weight-bold;
-	line-height: rem(28.2);
+	@include heading-hero();
+
 	padding: 0 5vw;
 
 	@media ($md) {
-		font-size: $font-size-h1-md;
-		line-height: rem(30);
 		padding: 0 13vw;
 	}
 
 	@media ($lg) {
-		font-size: $font-size-h1-lg;
-		line-height: rem(55);
 		padding: 0 10vw;
 	}
 }
@@ -67,42 +63,11 @@
 }
 
 .page-company__content {
-	padding: rem(20) 0;
-
-	@media ($md) {
-		padding: rem(80) 14vw;
-	}
-
-	@media ($lg) {
-		padding: rem(90) 18vw;
-	}
-
-	@media ($xlg) {
-		padding: rem(90) rem(180);
-		max-width: rem($xlarge);
-		margin: 0 auto;
-	}
+	@include page-content();
 }
 
 .page-company__text {
-	font-size: $font-size-text-sm;
-	line-height: rem(21);
-	color: $color-text;
+	@include body-text();
+
 	margin-bottom: 1.3em;
-
-	@media ($md) {
-		font-size: $font-size-text-md;
-		line-height: rem(24);
-	}
-
-	@media ($lg) {
-		font-size: $font-size-text-lg;
-		line-height: rem(28.2);
-	}
-
-	@media ($xlg) {
-		font-size: $font-size-text-huge;
-		font-weight: $font-weight-light;
-		line-height: rem(38.7);
-	}
 }

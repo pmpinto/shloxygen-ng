@@ -1,5 +1,6 @@
 @import "../utils/scss/variables.scss";
 @import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
 
 .cta {
 	padding: rem(40) 0;
@@ -53,27 +54,7 @@
 }
 
 .cta__button {
-	font-size: $font-size-text-medium;
-	line-height: rem(18);
-	font-weight: $font-weight-bold;
-	padding: rem(12) rem(22);
-	display: block;
-	background-color: $color-background;
-	border: 3px solid $color-brand;
-	box-shadow: $box-shadow-z1;
-	border-radius: 6px;
-	text-decoration: none;
-
-	@media ($md) {
-		font-size: $font-size-text;
-		line-height: rem(19);
-		margin: 0 auto;
-		max-width: rem(240);
-	}
-
-	@media ($lg) {
-		padding: rem(20) rem(40);
-	}
+	@include button-base();
 
 	&:hover,
 	&:active {

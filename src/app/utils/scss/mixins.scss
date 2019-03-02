@@ -1,0 +1,116 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+
+// Page
+// #############################################################################
+@mixin page-content() {
+	padding: rem(20) 0;
+
+	@media ($md) {
+		padding: rem(80) 14vw;
+	}
+
+	@media ($lg) {
+		padding: rem(90) 18vw;
+	}
+
+	@media ($xlg) {
+		padding: rem(90) rem(180);
+		max-width: rem($xlarge);
+		margin: 0 auto;
+	}
+}
+
+// Type
+// #############################################################################
+@mixin heading-hero() {
+	font-size: $font-size-h1-sm;
+	font-weight: $font-weight-bold;
+	line-height: rem(28.2);
+
+	@media ($md) {
+		font-size: $font-size-h1-md;
+		line-height: rem(30);
+	}
+
+	@media ($lg) {
+		font-size: $font-size-h1-lg;
+		line-height: rem(55);
+	}
+}
+
+@mixin body-text() {
+	font-size: $font-size-text-sm;
+	line-height: rem(21);
+	color: $color-text;
+
+	@media ($md) {
+		font-size: $font-size-text-md;
+		line-height: rem(24);
+	}
+
+	@media ($lg) {
+		font-size: $font-size-text-lg;
+		line-height: rem(28.2);
+	}
+
+	@media ($xlg) {
+		font-size: $font-size-text-huge;
+		font-weight: $font-weight-light;
+		line-height: rem(38.7);
+	}
+}
+
+@mixin body-lead() {
+	font-size: $font-size-text;
+	line-height: rem(21);
+
+	@media ($md) {
+		font-size: $font-size-text-bigger;
+		line-height: rem(28.2);
+	}
+
+	@media ($lg) {
+		font-size: $font-size-text-huge;
+		font-weight: $font-weight-light;
+		line-height: rem(38.7);
+	}
+}
+
+@mixin body-tiny() {
+	font-size: $font-size-text-tiny;
+	text-transform: uppercase;
+	color: fade-out($color: $color-text, $amount: 0.5);
+	letter-spacing: 2px;
+	line-height: 1.4;
+
+	@media ($md) {
+		font-size: $font-size-text-small;
+	}
+}
+
+// Button
+// #############################################################################
+
+@mixin button-base() {
+	font-size: $font-size-text-medium;
+	line-height: rem(18);
+	font-weight: $font-weight-bold;
+	padding: rem(12) rem(22);
+	display: block;
+	background-color: $color-background;
+	border: 3px solid $color-brand;
+	box-shadow: $box-shadow-z1;
+	border-radius: 6px;
+	text-decoration: none;
+	width: 100%;
+	text-align: center;
+
+	@media ($md) {
+		font-size: $font-size-text;
+		line-height: rem(21);
+		margin: 0 auto;
+		max-width: rem(240);
+		padding: rem(20) rem(40);
+	}
+}
