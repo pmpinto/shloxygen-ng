@@ -1,0 +1,12 @@
+<!-- Textarea -->
+<div class="input input--textarea" [formGroup]="formGroup">
+	<pre *ngIf="_inputService.fieldIsInvalid(formGroup.controls[controlName])">INVALID</pre>
+	<label [for]="controlName">{{ inputLabel }}</label>
+	<textarea
+		[name]="controlName"
+		[id]="controlName"
+		[placeholder]="inputPlaceholder"
+		[formControlName]="controlName"
+	></textarea>
+	<ng-content></ng-content>
+</div>

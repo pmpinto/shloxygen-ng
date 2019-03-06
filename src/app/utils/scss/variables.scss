@@ -56,6 +56,7 @@ $color-light-blue: #b4bfcf;
 $color-light-yellow: #fffefa;
 $color-camel: #e6c491;
 $color-green: #8d9c87;
+$color-red: #db7171;
 
 // Color aliases
 // Use these ones instead, they add purpose and meaning, so they're easier to remember
@@ -78,6 +79,8 @@ $color-border: fade-out($color: $color-light-blue, $amount: 0.75);
 
 $color-plan-corporate: $color-light-blue;
 $color-plan-private: $color-camel;
+
+$color-error: $color-red;
 
 // Type
 // #############################################################################

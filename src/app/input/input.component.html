@@ -1,0 +1,22 @@
+<!-- Input (text|email|tel) -->
+<div
+	[ngClass]="['input', 'input--' + inputType]"
+	*ngIf="inputType === 'text' || inputType === 'email' || inputType === 'tel'"
+	[formGroup]="formGroup"
+>
+	<label class="input__label" [for]="controlName">{{ inputLabel }}</label>
+	<input
+		class="input__field"
+		[type]="inputType"
+		[name]="controlName"
+		[id]="controlName"
+		placeholder="{{ inputPlaceholder }}"
+		[formControlName]="controlName"
+	/>
+	<p class="input__hint" *ngIf="inputHint && _inputService.fieldIsInvalid(formGroup.controls[controlName])">
+		{{ inputHint }}
+	</p>
+	<p class="input__hint" *ngIf="controlName === 'date' && _inputService.getDateString(formGroup.controls.date)">
+		<ng-content select="p.hint"></ng-content>
+	</p>
+</div>

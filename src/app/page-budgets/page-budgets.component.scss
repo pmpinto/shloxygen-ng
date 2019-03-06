@@ -1,0 +1,23 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.page-budgets {
+}
+
+.page-budgets__header {
+	padding: rem(80) rem(30);
+	text-align: center;
+
+	@media ($lg) {
+		padding: rem(130) rem(30);
+	}
+}
+
+.page-budgets__title {
+	@include heading-hero();
+}
+
+.page-budgets__subtitle {
+	@include body-lead();
+}

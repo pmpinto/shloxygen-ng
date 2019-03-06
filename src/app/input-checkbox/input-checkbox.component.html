@@ -1,0 +1,15 @@
+<!-- Checkbox -->
+<div class="input input--checkbox" [formGroup]="formGroup">
+	<pre *ngIf="_inputService.fieldIsInvalid(formGroup.controls[controlName])">INVALID</pre>
+	<input
+		type="checkbox"
+		[name]="controlName"
+		[id]="controlName"
+		placeholder="{{ inputPlaceholder }}"
+		[formControlName]="controlName"
+		[value]="true"
+		(change)="updateCheckboxValue($event, formGroup.controls[controlName])"
+	/>
+	<label [for]="controlName">{{ inputLabel }}</label>
+	<ng-content></ng-content>
+</div>

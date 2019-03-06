@@ -1,0 +1,54 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+::-webkit-input-placeholder {
+	/* Chrome/Opera/Safari */
+	color: fade-out($color: $color-text, $amount: 0.75);
+}
+
+::-moz-placeholder {
+	/* Firefox 19+ */
+	color: fade-out($color: $color-text, $amount: 0.75);
+}
+
+.input {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: rem(24);
+}
+
+.input__label {
+	@include body-tiny();
+
+	margin-bottom: rem(8);
+	color: $color-text;
+}
+
+.input__field {
+	@include body-text();
+
+	border-radius: 4px;
+	border: 2px solid $color-border;
+	padding: rem(18) rem(24);
+	width: 100%;
+	outline-offset: 0;
+
+	&:focus {
+		border-color: $color-brand;
+	}
+
+	&.ng-invalid.ng-touched {
+		border-color: $color-error;
+	}
+}
+
+.input__hint {
+	@include body-tiny();
+
+	margin-top: rem(4);
+}
+
+// :host-context(app-input) .input__hint {
+// 	background-color: yellow;
+// }

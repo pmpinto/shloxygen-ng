@@ -1,4 +1,95 @@
-<p>
-	page-budgets works!
-</p>
-<p *ngIf="routeParams">{{ routeParams.product }}</p>
+<div class="page-budgets">
+	<header class="page-budgets__header">
+		<div class="container-full container-xl">
+			<h1 class="page-budgets__title">Orçamentos</h1>
+			<p class="page-budgets__subtitle">
+				Os serviços de higiene e limpeza são desenvolvidos com a melhor metodologia de trabalho escrupulosamente
+				adaptada ao consumidor.
+			</p>
+		</div>
+	</header>
+	<main class="page-budgets__plans-wrapper">
+		<div class="container">
+			<pre>{{ budgetForm.value | json }}</pre>
+			<form>
+				<app-input-select
+					inputLabel="Producto"
+					inputPlaceholder="Selecione uma opção"
+					[formGroup]="budgetForm"
+					controlName="product"
+				>
+					<option value="corporate">Corporate B2B</option>
+					<option value="private">Private B2C</option>
+				</app-input-select>
+				<app-input-select
+					inputLabel="Tipo de serviço"
+					inputPlaceholder="Selecione uma opção"
+					[formGroup]="budgetForm"
+					controlName="serviceType"
+				>
+					<option value="manutencao">Manutenção</option>
+					<option value="ocasional">Ocasional</option>
+					<option value="limpeza-geral">Limpeza geral</option>
+					<option value="vidros">Vidros</option>
+				</app-input-select>
+				<app-input
+					inputType="text"
+					inputLabel="Data de serviço"
+					inputPlaceholder="2019/02/23"
+					[formGroup]="budgetForm"
+					controlName="date"
+					inputHint="Formato: AAAA/MM/DD ex: 2019/4/24"
+				>
+					<p class="hint">
+						{{ _inputService.getDateString(budgetForm.controls.date) }}
+					</p>
+				</app-input>
+				<app-input
+					inputType="text"
+					inputLabel="Morada"
+					inputPlaceholder="Rua da Fábrica, 172"
+					[formGroup]="budgetForm"
+					controlName="address"
+					inputHint="Campo obrigatório"
+				></app-input>
+
+				<app-input
+					inputType="text"
+					inputLabel="Nome"
+					inputPlaceholder="Ezequiel Valadas"
+					[formGroup]="budgetForm"
+					controlName="name"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input
+					inputType="email"
+					inputLabel="E-mail"
+					inputPlaceholder="info@shloxygen.com"
+					[formGroup]="budgetForm"
+					controlName="email"
+					inputHint="Formato: info@shloxygen.com"
+				></app-input>
+				<app-input
+					inputType="tel"
+					inputLabel="Telefone"
+					inputPlaceholder="229060870"
+					[formGroup]="budgetForm"
+					controlName="phone"
+					inputHint="Formato: 9 dígitos, exemplo: 229060870"
+				></app-input>
+				<app-input-textarea
+					inputLabel="Observações"
+					inputPlaceholder="Deixe aqui algum comentário que seja necessário…"
+					[formGroup]="budgetForm"
+					controlName="obs"
+				></app-input-textarea>
+				<app-input-checkbox
+					inputLabel="Ao enviar este formulário estará a consentir que a SHL OXYGEN recolha e processe os dados acima inseridos."
+					[formGroup]="budgetForm"
+					controlName="agreement"
+				></app-input-checkbox>
+			</form>
+			<pre>FORM IS VALID:{{ budgetForm.valid }}</pre>
+		</div>
+	</main>
+</div>
