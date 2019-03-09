@@ -1,0 +1,136 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.page-news-detail {
+}
+
+.page-news-detail__image {
+	width: 100vw;
+	height: calc(100vw / 1.618);
+	object-fit: cover;
+	object-position: center;
+}
+
+.page-news-detail__header {
+	background-color: $color-background;
+	padding: rem(16);
+	margin: 0 rem(16);
+	margin-top: rem(-56);
+	position: relative;
+
+	@media ($md) {
+		margin: 0 rem(32);
+		margin-top: rem(-80);
+		padding: rem(32) rem(64);
+	}
+
+	@media ($lg) {
+		padding: rem(32) rem(112);
+	}
+
+	@media ($xlg) {
+		padding: rem(64) rem((8 * 16));
+		margin: 0 auto;
+		margin-top: rem(-180);
+		max-width: rem($xlarge);
+	}
+}
+
+.page-news-detail__date {
+	@include body-tiny();
+}
+
+.page-news-detail__title {
+	@include heading-hero();
+}
+
+.page-news-detail__body {
+	@include body-text();
+
+	padding: rem(16);
+	padding-bottom: rem(32);
+
+	@media ($md) {
+		padding-left: rem((8 * 12));
+		padding-right: rem((8 * 12));
+	}
+
+	@media ($lg) {
+		padding-left: rem((8 * 18));
+		padding-right: rem((8 * 18));
+	}
+
+	@media ($xlg) {
+		padding-left: rem((8 * 40));
+		padding-right: rem((8 * 40));
+		margin: 0 auto;
+		max-width: rem(1440);
+	}
+}
+
+.page-news-detail__share {
+	margin-top: rem(32);
+	margin-bottom: rem(64);
+	padding-top: rem(64);
+	border-top: 1px solid $color-border;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.page-news-detail__share-text {
+	@include body-lead();
+
+	margin-bottom: 0;
+	padding: 0 rem(32);
+	width: 100%;
+}
+
+.page-news-detail__share-button {
+	@include body-lead();
+
+	font-weight: $font-weight-bold;
+	text-decoration: none;
+	display: block;
+	width: 100%;
+	padding: rem(16);
+
+	&::before {
+		content: "";
+		display: inline-block;
+		margin-right: rem(8);
+		width: rem(20);
+		height: rem(20);
+		background-size: 16px;
+		background-position: center;
+		background-repeat: no-repeat;
+		vertical-align: -4px;
+
+		@media ($lg) {
+			background-size: 20px;
+			vertical-align: -1px;
+		}
+	}
+
+	@media ($md) {
+		width: auto;
+	}
+
+	@media ($lg) {
+		font-weight: $font-weight-bold;
+	}
+}
+
+.page-news-detail__share-button--facebook::before {
+	background-image: url("/assets/icons/icon-facebook.svg");
+}
+
+.page-news-detail__share-button--linkedin::before {
+	background-image: url("/assets/icons/icon-linkedin.svg");
+}
+
+.page-news-detail__share-button--twitter::before {
+	background-image: url("/assets/icons/icon-twitter.svg");
+}

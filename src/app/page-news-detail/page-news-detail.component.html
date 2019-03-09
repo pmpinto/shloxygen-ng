@@ -1,3 +1,42 @@
-<p>
-  page-news-detail works!
-</p>
+<div class="page-news-detail">
+	<article>
+		<img [src]="newsArticle.image" alt="" class="page-news-detail__image" />
+		<header class="page-news-detail__header">
+			<time class="page-news-detail__date" dateTime="{{ newsArticle.date | date: 'yyyy/MM/dd' }}">{{
+				newsArticle.date | date: "longDate":"":"pt-PT"
+			}}</time>
+			<h1 class="page-news-detail__title">{{ newsArticle.title }}</h1>
+		</header>
+		<main class="page-news-detail__body" [innerHTML]="newsArticle.body"></main>
+	</article>
+	<div class="container-full container-m container-l">
+		<div class="page-news-detail__share">
+			<p class="page-news-detail__share-text">Partilhe esta notícia com as suas redes</p>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://www.facebook.com/sharer/sharer.php?u={{ getTextToShareOnURL(getCurrentURL()) }}"
+				class="page-news-detail__share-button page-news-detail__share-button--facebook"
+				>Facebook</a
+			>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://www.linkedin.com/shareArticle?url={{ getTextToShareOnURL(getCurrentURL()) }}&title={{
+					getTextToShareOnURL(newsArticle.title)
+				}}&summary=&source="
+				class="page-news-detail__share-button page-news-detail__share-button--linkedin"
+				>LinkedIn</a
+			>
+			<a
+				target="_blank"
+				rel="noopener noreferrer"
+				href="https://twitter.com/home?status={{
+					getTextToShareOnURL(newsArticle.title + ' – @shloxygen ' + getCurrentURL())
+				}}"
+				class="page-news-detail__share-button page-news-detail__share-button--twitter"
+				>Twitter</a
+			>
+		</div>
+	</div>
+</div>
