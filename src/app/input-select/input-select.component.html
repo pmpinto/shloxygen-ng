@@ -1,9 +1,11 @@
 <!-- Select -->
 <div class="input input--select" [formGroup]="formGroup">
-	<pre *ngIf="_inputService.fieldIsInvalid(formGroup.controls[controlName])">INVALID</pre>
-	<label [for]="controlName">{{ inputLabel }}</label>
-	<select [name]="controlName" [id]="controlName" [formControlName]="controlName">
+	<label class="input__label" [for]="controlName">{{ inputLabel }}</label>
+	<select class="input__field" [name]="controlName" [id]="controlName" [formControlName]="controlName">
 		<option value="" disabled selected>{{ inputPlaceholder }}</option>
 		<ng-content></ng-content>
 	</select>
+	<p class="input__hint" *ngIf="inputHint && _inputService.fieldIsInvalid(formGroup.controls[controlName])">
+		{{ inputHint }}
+	</p>
 </div>

@@ -18,7 +18,8 @@ import { PageServicesComponent } from "./page-services/page-services.component"
 import { PlanComponent } from "./plan/plan.component";
 import { InputSelectComponent } from './input-select/input-select.component';
 import { InputTextareaComponent } from './input-textarea/input-textarea.component';
-import { InputCheckboxComponent } from './input-checkbox/input-checkbox.component'
+import { InputCheckboxComponent } from './input-checkbox/input-checkbox.component';
+import { FormSubmitComponent } from './form-submit/form-submit.component'
 
 @NgModule({
 	declarations: [
@@ -37,7 +38,8 @@ import { InputCheckboxComponent } from './input-checkbox/input-checkbox.componen
 		InputComponent,
 		InputSelectComponent,
 		InputTextareaComponent,
-		InputCheckboxComponent
+		InputCheckboxComponent,
+		FormSubmitComponent
 	],
 	imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
 	providers: [],

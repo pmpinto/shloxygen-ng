@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core"
-import { FormBuilder, FormControl, FormGroup, Validators } from "@angular/forms"
+import { FormControl, FormGroup, Validators } from "@angular/forms"
 import { ActivatedRoute } from "@angular/router"
 import { InputService } from "../services/input.service"
 
@@ -9,16 +9,13 @@ import { InputService } from "../services/input.service"
 	styleUrls: ["./page-budgets.component.scss"]
 })
 export class PageBudgetsComponent implements OnInit {
-	routeParams: object
-	budget: object = {}
+	routeParams: any
+	status: string
+	isLoading: boolean
 	budgetForm: FormGroup
 	dateRegex: RegExp = this._inputService.dateRegex
 
-	constructor(
-		private _router: ActivatedRoute,
-		private _formBuilder: FormBuilder,
-		private _inputService: InputService
-	) {
+	constructor(private _router: ActivatedRoute, private _inputService: InputService) {
 		this.budgetForm = new FormGroup({
 			product: new FormControl("", Validators.required),
 			serviceType: new FormControl("", Validators.required),
@@ -36,6 +33,34 @@ export class PageBudgetsComponent implements OnInit {
 		// Get route params
 		this._router.params.subscribe(data => {
 			this.routeParams = data
+
+			// Update form with product on URL
+			if (this.routeParams.product === "corporate" || this.routeParams.product === "private") {
+				this.budgetForm.controls.product.setValue(this.routeParams.product)
+			}
 		})
+	}
+
+	submit() {
+		if (this.budgetForm.valid) {
+			console.log("submiting", this.budgetForm.value)
+			this.isLoading = true
+			this.status = "A enviar…"
+
+			setTimeout(() => {
+				this.status = "Enviado com sucesso!"
+				this.isLoading = false
+
+				this.clearStatus()
+
+				this.budgetForm.reset() // ONLY IF SUCCESS
+			}, 2000)
+		}
+	}
+
+	clearStatus() {
+		setTimeout(() => {
+			this.status = ""
+		}, 5000)
 	}
 }

@@ -6,11 +6,11 @@
 }
 
 .page-budgets__header {
-	padding: rem(80) rem(30);
+	padding: rem(80) 0;
 	text-align: center;
 
 	@media ($lg) {
-		padding: rem(130) rem(30);
+		padding: rem(130) 0;
 	}
 }
 

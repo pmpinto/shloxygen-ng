@@ -1,0 +1,28 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.form-submit {
+	padding: rem(60) 0;
+}
+
+.form-submit__button {
+	@include button-base();
+
+	background-color: $color-brand;
+	color: $color-white;
+	border: none;
+	border-radius: 3px;
+
+	&[disabled] {
+		cursor: not-allowed;
+		opacity: 0.25;
+	}
+}
+
+.form-submit__hint {
+	@include body-tiny();
+
+	text-align: center;
+	margin-top: rem(12);
+}

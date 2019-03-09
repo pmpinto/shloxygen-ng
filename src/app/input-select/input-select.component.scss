@@ -1,0 +1,39 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+@import "../input/input.component.scss";
+
+.input--select {
+	position: relative;
+
+	.input__field {
+		appearance: none;
+		color: fade-out($color: $color-text, $amount: 0.75);
+
+		&.ng-valid {
+			color: $color-text;
+		}
+	}
+
+	&::after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: 45px;
+		right: 22px;
+		width: 20px;
+		height: 12px;
+		background-image: url("/assets/icons/icon-select-caret.svg");
+		background-repeat: no-repeat;
+		background-position: center;
+		pointer-events: none;
+
+		@media ($md) {
+			top: 49px;
+		}
+
+		@media ($lg) {
+			top: 53px;
+		}
+	}
+}

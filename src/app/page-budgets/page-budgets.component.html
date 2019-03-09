@@ -1,6 +1,6 @@
 <div class="page-budgets">
 	<header class="page-budgets__header">
-		<div class="container-full container-xl">
+		<div class="container-full container-m">
 			<h1 class="page-budgets__title">Orçamentos</h1>
 			<p class="page-budgets__subtitle">
 				Os serviços de higiene e limpeza são desenvolvidos com a melhor metodologia de trabalho escrupulosamente
@@ -9,14 +9,14 @@
 		</div>
 	</header>
 	<main class="page-budgets__plans-wrapper">
-		<div class="container">
-			<pre>{{ budgetForm.value | json }}</pre>
+		<div class="container-full container-m">
 			<form>
 				<app-input-select
 					inputLabel="Producto"
 					inputPlaceholder="Selecione uma opção"
 					[formGroup]="budgetForm"
 					controlName="product"
+					inputHint="Campo obrigatório"
 				>
 					<option value="corporate">Corporate B2B</option>
 					<option value="private">Private B2C</option>
@@ -26,6 +26,7 @@
 					inputPlaceholder="Selecione uma opção"
 					[formGroup]="budgetForm"
 					controlName="serviceType"
+					inputHint="Campo obrigatório"
 				>
 					<option value="manutencao">Manutenção</option>
 					<option value="ocasional">Ocasional</option>
@@ -87,9 +88,17 @@
 					inputLabel="Ao enviar este formulário estará a consentir que a SHL OXYGEN recolha e processe os dados acima inseridos."
 					[formGroup]="budgetForm"
 					controlName="agreement"
+					inputHint="Campo obrigatório"
 				></app-input-checkbox>
+
+				<app-form-submit
+					buttonLabel="Enviar"
+					[statusMessage]="status"
+					[formIsLoading]="isLoading"
+					(onClickButton)="submit()"
+					[formIsValid]="budgetForm.valid"
+				></app-form-submit>
 			</form>
-			<pre>FORM IS VALID:{{ budgetForm.valid }}</pre>
 		</div>
 	</main>
 </div>

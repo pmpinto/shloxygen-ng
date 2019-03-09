@@ -10,6 +10,7 @@ import { InputService } from "../services/input.service"
 export class InputCheckboxComponent implements OnInit {
 	@Input() inputLabel: string
 	@Input() inputPlaceholder: string
+	@Input() inputHint: string
 	@Input() formGroup: FormGroup
 	@Input() controlName: string
 

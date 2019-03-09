@@ -1,9 +1,5 @@
 <!-- Input (text|email|tel) -->
-<div
-	[ngClass]="['input', 'input--' + inputType]"
-	*ngIf="inputType === 'text' || inputType === 'email' || inputType === 'tel'"
-	[formGroup]="formGroup"
->
+<div [ngClass]="['input', 'input--' + inputType]" [formGroup]="formGroup">
 	<label class="input__label" [for]="controlName">{{ inputLabel }}</label>
 	<input
 		class="input__field"

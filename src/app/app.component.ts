@@ -7,4 +7,8 @@ import { Component } from "@angular/core"
 })
 export class AppComponent {
 	title = "shloxygen"
+
+	onChangeRoute() {
+		window.scroll(0, 0)
+	}
 }

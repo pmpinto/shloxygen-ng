@@ -1,0 +1,22 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.input {
+	display: flex;
+	align-items: baseline;
+}
+
+.input__field {
+	margin-right: rem(10);
+}
+
+.input__label {
+	@include body-text();
+}
+
+.input__hint {
+	@include body-tiny();
+
+	margin-top: rem(4);
+}

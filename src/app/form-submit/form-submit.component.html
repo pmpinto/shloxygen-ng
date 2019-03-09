@@ -1,0 +1,6 @@
+<div class="form-submit">
+	<button class="form-submit__button" (click)="click()" [disabled]="!formIsValid || formIsLoading">
+		{{ buttonLabel }}
+	</button>
+	<p class="form-submit__hint">{{ statusMessage }}</p>
+</div>
