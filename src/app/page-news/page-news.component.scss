@@ -1,0 +1,73 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.page-news {
+	padding: rem(40) 0;
+
+	@media ($md) {
+		padding: rem(80) 0;
+	}
+
+	@media ($lg) {
+		padding: rem(120) 0;
+	}
+}
+
+.page-news__header {
+	padding-bottom: rem(8);
+	border-bottom: 1px solid $color-border;
+}
+
+.page-news__heading {
+	@include heading-hero();
+}
+
+.page-news__list-wrapper {
+	margin-top: rem(26);
+}
+
+.page-news__article {
+	margin-bottom: rem(16);
+
+	@media ($md) {
+		margin-bottom: rem(32);
+	}
+}
+
+.page-news__title {
+	@include body-text();
+
+	font-weight: $font-weight-normal;
+	transition: padding-left $transition-timing-default, border-left $transition-timing-default;
+}
+
+.page-news__date {
+	@include body-tiny();
+}
+
+.page-news__link {
+	text-decoration: none;
+	display: block;
+
+	&:hover {
+		.page-news__title {
+			padding-left: rem(16);
+			border-left: 2px solid $color-text;
+		}
+	}
+}
+
+.page-news__social-grid {
+	margin-top: rem(80);
+
+	@media ($md) {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: rem(20);
+	}
+
+	@media ($lg) {
+		margin-top: rem(140);
+	}
+}

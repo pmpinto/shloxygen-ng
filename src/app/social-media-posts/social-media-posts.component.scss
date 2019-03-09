@@ -1,0 +1,55 @@
+@import "../utils/scss/variables.scss";
+@import "../utils/scss/px-to-rem.scss";
+@import "../utils/scss/mixins.scss";
+
+.social-media-posts {
+}
+
+.social-media-posts__header {
+	padding-bottom: rem(8);
+	margin-bottom: rem(16);
+	border-bottom: 1px solid $color-border;
+
+	@media ($md) {
+		padding-bottom: rem(18);
+		margin-bottom: rem(24);
+	}
+}
+
+.social-media-posts__heading {
+	@include heading-hero();
+
+	margin-bottom: 0;
+}
+
+.social-media-posts__handle {
+	@include body-text();
+
+	color: $color-text-muted;
+}
+
+.social-media-posts__list {
+	list-style: none;
+	padding-left: 0;
+}
+
+.social-media-posts__post {
+	margin-bottom: rem(40);
+}
+
+.social-media-posts__date {
+	@include body-tiny();
+}
+
+.social-media-posts__body {
+	@include body-text();
+}
+
+.social-media-posts__link {
+	text-decoration: none;
+	color: darken($color-camel, 10%);
+
+	&:hover {
+		color: $color-camel;
+	}
+}

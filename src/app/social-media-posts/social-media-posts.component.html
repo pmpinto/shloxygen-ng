@@ -1,0 +1,19 @@
+<div class="social-media-posts">
+	<header class="social-media-posts__header">
+		<h3 class="social-media-posts__heading">{{ source }}</h3>
+		<p class="social-media-posts__handle">{{ handle }}</p>
+	</header>
+	<ol class="social-media-posts__list">
+		<li *ngFor="let post of posts" class="social-media-posts__post">
+			<time class="social-media-posts__date" dateTime="{{ post.date | date: 'yyyy/MM/dd' }}">{{
+				post.date | date: "longDate":"":"pt-PT"
+			}}</time>
+			<p class="social-media-posts__body">
+				{{ post.body | slice: 0:100 }}{{ post.body.length > 100 ? "…" : "" }}
+				<a [href]="post.link" target="_blank" rel="noopener noreferrer" class="social-media-posts__link">
+					Ver mais
+				</a>
+			</p>
+		</li>
+	</ol>
+</div>

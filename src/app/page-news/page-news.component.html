@@ -1,3 +1,38 @@
-<p>
-  page-news works!
-</p>
+<div class="page-news">
+	<header class="page-news__header">
+		<div class="container-full container-m container-l">
+			<h1 class="page-news__heading">Notícias</h1>
+		</div>
+	</header>
+	<main class="page-news__list-wrapper">
+		<div class="container-full container-m container-l">
+			<article class="page-news__article" *ngFor="let article of news">
+				<a [routerLink]="['/noticias', article.permalink]" class="page-news__link">
+					<time class="page-news__date" dateTime="{{ article.date | date: 'yyyy/MM/dd' }}">{{
+						article.date | date: "longDate":"":"pt-PT"
+					}}</time>
+					<h2 class="page-news__title">{{ article.title }}</h2>
+				</a>
+			</article>
+		</div>
+	</main>
+	<aside class="page-news__social">
+		<div class="page-news__social-grid container-full container-m container-l">
+			<app-social-media-posts
+				source="Facebook"
+				handle="@shloxygen"
+				[posts]="facebookPosts"
+			></app-social-media-posts>
+			<app-social-media-posts
+				source="LinkedIn"
+				handle="?????????"
+				[posts]="linkedinPosts"
+			></app-social-media-posts>
+			<app-social-media-posts
+				source="Twitter"
+				handle="@shloxygen"
+				[posts]="twitterPosts"
+			></app-social-media-posts>
+		</div>
+	</aside>
+</div>
