@@ -1,3 +1,107 @@
-<p>
-  page-contacts works!
-</p>
+<div class="page-contacts">
+	<header class="page-contacts__header">
+		<div class="container-full container-m">
+			<h1 class="page-contacts__title">Contactos</h1>
+			<p class="page-contacts__subtitle">
+				<a
+					class="page-contacts__link"
+					href="https://goo.gl/maps/8owbg6en32P2"
+					target="_blank"
+					rel="noopener noreferrer"
+					>Av. Marechal Gomes da Costa, 205 <br />
+					4460-158 São Mamede Infesta</a
+				>
+			</p>
+			<p class="page-contacts__contacts">
+				<a class="page-contacts__link" href="mailto:info@shloxygen.com">info@shloxygen.com</a>
+				<a class="page-contacts__link" href="tel:+351229060870">229 060 870</a>
+			</p>
+		</div>
+		<div class="page-contacts__map-wrapper">
+			<a class="page-contacts__map-link" href="https://goo.gl/maps/8owbg6en32P2" target="_blank" rel="noopener noreferrer"
+				><img
+					src="/assets/page-contacts/google-maps.png"
+					alt="Google Maps Screenshot"
+					class="page-contacts__map"
+			/></a>
+		</div>
+	</header>
+	<section class="page-contacts__cta">
+		<app-cta
+			[title]="'Pretende um orçamento?'"
+			[text]="'Dirija-se à nossa página de orçamentos onde poderá enviar o seu pedido'"
+			[buttonLabel]="'Orçamentos'"
+			[buttonRoute]="'/orcamentos'"
+		></app-cta>
+	</section>
+	<main class="page-contacts__form-wrapper">
+		<div class="container-full container-m">
+			<form>
+				<app-input
+					inputType="text"
+					inputLabel="Nome"
+					inputPlaceholder="Ezequiel Valadas"
+					[formGroup]="contactForm"
+					controlName="name"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input
+					inputType="email"
+					inputLabel="E-mail"
+					inputPlaceholder="info@shloxygen.com"
+					[formGroup]="contactForm"
+					controlName="email"
+					inputHint="Formato: info@shloxygen.com"
+				></app-input>
+				<app-input
+					inputType="tel"
+					inputLabel="Telefone"
+					inputPlaceholder="229060870"
+					[formGroup]="contactForm"
+					controlName="phone"
+					inputHint="Formato: 9 dígitos, exemplo: 229060870"
+				></app-input>
+				<app-input
+					inputType="text"
+					inputLabel="Assunto"
+					inputPlaceholder="Dúvida acerca dos vossos planos"
+					[formGroup]="contactForm"
+					controlName="subject"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input-textarea
+					inputLabel="Mensagem"
+					inputPlaceholder="Deixe aqui a sua mensagem…"
+					[formGroup]="contactForm"
+					controlName="message"
+				></app-input-textarea>
+				<app-input-select
+					inputLabel="Tipo de urgência"
+					inputPlaceholder="Selecione uma opção"
+					[formGroup]="contactForm"
+					controlName="priority"
+					inputHint="Campo obrigatório"
+				>
+					<option value="high">Alta</option>
+					<option value="medium">Média</option>
+					<option value="low">Baixa</option>
+				</app-input-select>
+
+				<app-input-checkbox
+					inputLabel="Ao enviar este formulário estará a consentir que a SHL OXYGEN recolha e processe os dados acima inseridos."
+					[formGroup]="contactForm"
+					controlName="agreement"
+					inputHint="Campo obrigatório"
+				></app-input-checkbox>
+
+				<app-form-submit
+					buttonLabel="Enviar"
+					[statusMessage]="status"
+					[formIsLoading]="isLoading"
+					(onClickButton)="submit()"
+					[formIsValid]="contactForm.valid"
+				></app-form-submit>
+			</form>
+		</div>
+	</main>
+</div>
