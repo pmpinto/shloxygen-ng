@@ -8,7 +8,7 @@
 		[placeholder]="inputPlaceholder"
 		[formControlName]="controlName"
 	></textarea>
-	<p class="input__hint" *ngIf="inputHint && _inputService.fieldIsInvalid(formGroup.controls[controlName])">
+	<p class="input__hint" *ngIf="inputHint && inputService.fieldIsInvalid(formGroup.controls[controlName])">
 		{{ inputHint }}
 	</p>
 	<ng-content></ng-content>

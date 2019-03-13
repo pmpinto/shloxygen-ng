@@ -13,9 +13,9 @@ export class PageBudgetsComponent implements OnInit {
 	status: string
 	isLoading: boolean
 	budgetForm: FormGroup
-	dateRegex: RegExp = this._inputService.dateRegex
+	dateRegex: RegExp = this.inputService.dateRegex
 
-	constructor(private _router: ActivatedRoute, private _inputService: InputService) {
+	constructor(private _router: ActivatedRoute, public inputService: InputService) {
 		this.budgetForm = new FormGroup({
 			product: new FormControl("", Validators.required),
 			serviceType: new FormControl("", Validators.required),

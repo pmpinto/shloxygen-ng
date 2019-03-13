@@ -5,7 +5,7 @@
 		<option value="" disabled selected>{{ inputPlaceholder }}</option>
 		<ng-content></ng-content>
 	</select>
-	<p class="input__hint" *ngIf="inputHint && _inputService.fieldIsInvalid(formGroup.controls[controlName])">
+	<p class="input__hint" *ngIf="inputHint && inputService.fieldIsInvalid(formGroup.controls[controlName])">
 		{{ inputHint }}
 	</p>
 </div>

@@ -11,7 +11,7 @@
 	/>
 	<div class="input__text-wrapper">
 		<label class="input__label" [for]="controlName">{{ inputLabel }}</label>
-		<p class="input__hint" *ngIf="inputHint && _inputService.fieldIsInvalid(formGroup.controls[controlName])">
+		<p class="input__hint" *ngIf="inputHint && inputService.fieldIsInvalid(formGroup.controls[controlName])">
 			{{ inputHint }}
 		</p>
 	</div>

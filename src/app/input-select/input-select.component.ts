@@ -14,7 +14,7 @@ export class InputSelectComponent implements OnInit {
 	@Input() formGroup: FormGroup
 	@Input() controlName: string
 
-	constructor(private _inputService: InputService) {}
+	constructor(public inputService: InputService) {}
 
 	ngOnInit() {}
 }

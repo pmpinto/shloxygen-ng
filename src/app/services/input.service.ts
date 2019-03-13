@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core"
-import { FormControl } from "@angular/forms"
+import { AbstractControl } from "@angular/forms"
 
 @Injectable({
 	providedIn: "root"
@@ -9,16 +9,11 @@ export class InputService {
 
 	constructor() {}
 
-	fieldIsInvalid(field: FormControl): boolean {
+	fieldIsInvalid(field: AbstractControl): boolean {
 		return field.invalid && field.touched
 	}
 
-	updateCheckboxValue(event: any, checkbox: FormControl) {
-		const isChecked = event.target.checked
-		checkbox.setValue(isChecked)
-	}
-
-	getDateString(date: FormControl) {
+	getDateString(date: AbstractControl) {
 		if (date.value) {
 			const dateIsValid = this.dateRegex.test(date.value)
 			const selectedDate = dateIsValid
