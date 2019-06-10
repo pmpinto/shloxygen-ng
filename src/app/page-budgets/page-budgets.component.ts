@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core"
 import { FormControl, FormGroup, Validators } from "@angular/forms"
 import { ActivatedRoute } from "@angular/router"
+import { IOrcamento } from "../interfaces/orcamentoObj"
+import { ApiConnectionService } from "../services/api-connection.service"
 import { InputService } from "../services/input.service"
 
 @Component({
@@ -15,7 +17,7 @@ export class PageBudgetsComponent implements OnInit {
 	budgetForm: FormGroup
 	dateRegex: RegExp = this.inputService.dateRegex
 
-	constructor(private _router: ActivatedRoute, public inputService: InputService) {
+	constructor(private _router: ActivatedRoute, public inputService: InputService, public _apiConnectionService: ApiConnectionService) {
 		this.budgetForm = new FormGroup({
 			product: new FormControl("", Validators.required),
 			serviceType: new FormControl("", Validators.required),
@@ -48,6 +50,19 @@ export class PageBudgetsComponent implements OnInit {
 			this.status = "A enviar…"
 
 			setTimeout(() => {
+				const orcamentoObj : IOrcamento = {
+					product: this.budgetForm.get("product").value,
+					serviceType: this.budgetForm.get("serviceType").value,
+					date: this.budgetForm.get("date").value,
+					address: this.budgetForm.get("address").value,
+					name: this.budgetForm.get("name").value,
+					email: this.budgetForm.get("email").value,
+					phone: this.budgetForm.get("phone").value,
+					obs: this.budgetForm.get("obs").value
+				}
+				// send email by api
+				this._apiConnectionService.sendOrcamento(orcamentoObj).subscribe(data => console.log("data"))
+
 				this.status = "Enviado com sucesso!"
 				this.isLoading = false
 
@@ -57,6 +72,7 @@ export class PageBudgetsComponent implements OnInit {
 			}, 2000)
 		}
 	}
+
 
 	clearStatus() {
 		setTimeout(() => {

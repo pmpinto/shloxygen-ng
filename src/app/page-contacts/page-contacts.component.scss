@@ -34,15 +34,18 @@
 	@include body-text();
 
 	.page-contacts__link {
-		&:last-of-type {
-			&::before {
-				content: "•";
-				display: inline-block;
-				margin: 0 rem(10);
-			}
+		&::before {
+			content: "•";
+			display: inline-block;
+			margin: 0 rem(10);
 		}
 	}
 }
+
+.page-contacts__email-link {
+	text-decoration: none;
+}
+
 
 .page-contacts__map-wrapper {
 	max-width: 100vw;

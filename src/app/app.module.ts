@@ -1,4 +1,5 @@
 import { registerLocaleData } from "@angular/common"
+import { HttpClientModule } from "@angular/common/http"
 import localePt from "@angular/common/locales/pt-PT"
 import { NgModule } from "@angular/core"
 import { BrowserModule } from "@angular/platform-browser"
@@ -19,11 +20,11 @@ import { PageBudgetsComponent } from "./page-budgets/page-budgets.component"
 import { PageCompanyComponent } from "./page-company/page-company.component"
 import { PageContactsComponent } from "./page-contacts/page-contacts.component"
 import { PageHomeComponent } from "./page-home/page-home.component"
+import { PageNewsDetailComponent } from "./page-news-detail/page-news-detail.component";
 import { PageNewsComponent } from "./page-news/page-news.component"
 import { PageServicesComponent } from "./page-services/page-services.component"
-import { PlanComponent } from "./plan/plan.component";
-import { PageNewsDetailComponent } from './page-news-detail/page-news-detail.component';
-import { SocialMediaPostsComponent } from './social-media-posts/social-media-posts.component'
+import { PlanComponent } from "./plan/plan.component"
+import { SocialMediaPostsComponent } from "./social-media-posts/social-media-posts.component"
 
 registerLocaleData(localePt, "pt-PT")
 
@@ -49,7 +50,7 @@ registerLocaleData(localePt, "pt-PT")
 		PageNewsDetailComponent,
 		SocialMediaPostsComponent
 	],
-	imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule],
+	imports: [BrowserModule, AppRoutingModule, FormsModule, ReactiveFormsModule, HttpClientModule],
 	providers: [],
 	bootstrap: [AppComponent]
 })

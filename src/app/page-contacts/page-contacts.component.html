@@ -9,12 +9,14 @@
 					target="_blank"
 					rel="noopener noreferrer"
 					>Av. Marechal Gomes da Costa, 205 <br />
-					4460-158 São Mamede Infesta</a
+					4465-158 São Mamede Infesta</a
 				>
 			</p>
 			<p class="page-contacts__contacts">
-				<a class="page-contacts__link" href="mailto:info@shloxygen.com">info@shloxygen.com</a>
+				<a class=".page-contacts__email-link" href="mailto:info@shloxygen.com">info@shloxygen.com</a>
 				<a class="page-contacts__link" href="tel:+351229060870">229 060 870</a>
+				<a class="page-contacts__link" href="tel:+351229060871">229 060 871</a>
+				<a class="page-contacts__link" href="tel:+351938558">938 457 558</a>
 			</p>
 		</div>
 		<div class="page-contacts__map-wrapper">
@@ -28,10 +30,10 @@
 	</header>
 	<section class="page-contacts__cta">
 		<app-cta
-			[title]="'Pretende um orçamento?'"
-			[text]="'Dirija-se à nossa página de orçamentos onde poderá enviar o seu pedido'"
-			[buttonLabel]="'Orçamentos'"
-			[buttonRoute]="'/orcamentos'"
+			[title]="'Junte-se a nós'"
+			[text]="'Consiga o ponto de viragem para a evolução clara da sua força e energia. Desafiamos a serem positivamente melhores e felizes. Venha!'"
+			[buttonLabel]=""
+			[buttonRoute]=""
 		></app-cta>
 	</section>
 	<main class="page-contacts__form-wrapper">
@@ -40,31 +42,55 @@
 				<app-input
 					inputType="text"
 					inputLabel="Nome"
-					inputPlaceholder="Ezequiel Valadas"
+					inputPlaceholder="Inserir nome"
 					[formGroup]="contactForm"
 					controlName="name"
 					inputHint="Campo obrigatório"
 				></app-input>
 				<app-input
-					inputType="email"
-					inputLabel="E-mail"
-					inputPlaceholder="info@shloxygen.com"
+					inputType="text"
+					inputLabel="Morada"
+					inputPlaceholder="Inserir morada"
 					[formGroup]="contactForm"
-					controlName="email"
-					inputHint="Formato: info@shloxygen.com"
+					controlName="address"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input
+					inputType="text"
+					inputLabel="Código Postal"
+					inputPlaceholder="Inserir código postal(Ex: 4000-1000)"
+					[formGroup]="contactForm"
+					controlName="postalCode"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input
+					inputType="text"
+					inputLabel="Localidade"
+					inputPlaceholder="Inserir localidade"
+					[formGroup]="contactForm"
+					controlName="local"
+					inputHint="Campo obrigatório"
 				></app-input>
 				<app-input
 					inputType="tel"
 					inputLabel="Telefone"
-					inputPlaceholder="229060870"
+					inputPlaceholder="Inserir número de telefone"
 					[formGroup]="contactForm"
 					controlName="phone"
 					inputHint="Formato: 9 dígitos, exemplo: 229060870"
 				></app-input>
 				<app-input
+					inputType="email"
+					inputLabel="E-mail"
+					inputPlaceholder="Inserir email"
+					[formGroup]="contactForm"
+					controlName="email"
+					inputHint="Formato: info@shloxygen.com"
+				></app-input>
+				<app-input
 					inputType="text"
 					inputLabel="Assunto"
-					inputPlaceholder="Dúvida acerca dos vossos planos"
+					inputPlaceholder="Inserir assunto"
 					[formGroup]="contactForm"
 					controlName="subject"
 					inputHint="Campo obrigatório"
@@ -76,16 +102,70 @@
 					controlName="message"
 				></app-input-textarea>
 				<app-input-select
-					inputLabel="Tipo de urgência"
+					inputLabel="Tipo de candidatura"
 					inputPlaceholder="Selecione uma opção"
 					[formGroup]="contactForm"
-					controlName="priority"
+					controlName="candidatura"
 					inputHint="Campo obrigatório"
 				>
-					<option value="high">Alta</option>
-					<option value="medium">Média</option>
-					<option value="low">Baixa</option>
+					<option value="profissional de limpeza">Profissional de limpeza</option>
+					<option value="lavador de vidros">Lavador de Vidros</option>
+					<option value="supervisor(a)">Supervisor(a)</option>
+					<option value="comercial">Comercial</option>
+					<option value="assistente administrativa">Assistente Administrativa</option>
 				</app-input-select>
+
+
+				<app-input-select
+					inputLabel="Situação Atual"
+					inputPlaceholder="Selecione uma opção"
+					[formGroup]="contactForm"
+					controlName="situacaoActual"
+					inputHint="Campo obrigatório"
+				>
+					<option value="empregado">Empregado(a)</option>
+					<option value="desempregado">Desempregado(a)</option>
+				</app-input-select>
+
+				<app-input-textarea
+					inputLabel="Caso empregado, onde e horário"
+					inputPlaceholder="Inserir situação profissional atual…"
+					[formGroup]="contactForm"
+					controlName="ondetrabalha"
+				></app-input-textarea>
+
+
+
+
+				<app-input
+					inputType="text"
+					inputLabel="Disponibilidade de horário"
+					inputPlaceholder="Inserir disponibilidade de horário"
+					[formGroup]="contactForm"
+					controlName="schedule"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input
+					inputType="text"
+					inputLabel="Habilitações literárias"
+					inputPlaceholder="Inserir habilitações literárias"
+					[formGroup]="contactForm"
+					controlName="literarias"
+					inputHint="Campo obrigatório"
+				></app-input>
+				<app-input-textarea
+					inputLabel="Experiência Profissional: Serviços de Limpeza"
+					inputPlaceholder="Inserir experiência em serviços de limpeza…"
+					[formGroup]="contactForm"
+					controlName="expProfServLimpeza"
+				></app-input-textarea>
+				<app-input-textarea
+					inputLabel="Experiência Profissional: Outros Serviços"
+					inputPlaceholder="Inserir experiência noutros serviços…"
+					[formGroup]="contactForm"
+					controlName="expProfServOutros"
+				></app-input-textarea>
+
 
 				<app-input-checkbox
 					inputLabel="Ao enviar este formulário estará a consentir que a SHL OXYGEN recolha e processe os dados acima inseridos."

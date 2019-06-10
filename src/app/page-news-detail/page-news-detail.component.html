@@ -7,7 +7,17 @@
 			}}</time>
 			<h1 class="page-news-detail__title">{{ newsArticle.title }}</h1>
 		</header>
-		<main class="page-news-detail__body" [innerHTML]="newsArticle.body"></main>
+		<!--<main class="page-news-detail__body" [innerHTML]="newsArticle.body"></main>-->
+		<main class="page-news-detail__body" *ngFor="let item of body1" [innerHTML]="item"></main>
+		<main class="page-news-detail__body">
+			<ul>
+				<li  *ngFor="let item of newsArticle.ul">
+					{{ item }}
+				</li>
+			</ul>
+		</main>
+		<main class="page-news-detail__body" *ngFor="let item of body2" [innerHTML]="item"></main>
+
 	</article>
 	<div class="container-full container-m container-l">
 		<div class="page-news-detail__share">
