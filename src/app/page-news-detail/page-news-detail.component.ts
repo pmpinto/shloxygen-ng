@@ -29,7 +29,7 @@ export class PageNewsDetailComponent implements OnInit {
 		this.newsArticles[0] = {
 			index: 1,
 			title: "Imagem dos serviços de limpeza.",
-			image: "/assets/page-news/news1/image.jpg",
+			image: "/assets/page-news/news1/image.jpeg",
 			body: [],
 			ul: new Array<string>(10),
 			permalink: "imagem-dos-servicos-de-limpeza",
@@ -38,7 +38,7 @@ export class PageNewsDetailComponent implements OnInit {
 		this.newsArticles[1] = {
 			index: 2,
 			title: "Digitalização na Limpeza - Irreal, Presente ou Futuro?",
-			image: "/assets/page-news/news2/image.jpg",
+			image: "/assets/page-news/news2/image.jpeg",
 			body: [],
 			ul: [],
 			permalink: "digitalizacao-na-limpeza-irreal-presente-ou-futuro",
